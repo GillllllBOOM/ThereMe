@@ -1,0 +1,4 @@
+5130379029
+
+今天配了RealSense,
+and大致了解了3D segmentation 和 Hands Tracking的相关东西。
