@@ -2,6 +2,7 @@
 #include <iostream>
 #include <time.h>
 #include <fstream>
+#include <vector>
 
 #include "pxcsensemanager.h"
 #include "pxcmetadata.h"
@@ -13,6 +14,7 @@
 #include "Definitions.h"
 #include "handsdata.h"
 #include "playwave.h"
+#include "Point.h"
 
 bool g_live = false; // true - Working in live camera mode, false - sequence mode
 bool g_gestures = false; // Writing gesture data to console ouput
@@ -109,9 +111,9 @@ void main(int argc, const char* argv[])
 	/*std::printf("-Gestures Are Enabled-\n");
 	g_handConfiguration->EnableAllGestures();
 	g_gestures = true;*/
-	//std::printf("-Alerts Are Enabled-\n");
-	//g_handConfiguration->EnableAllAlerts();
-	//g_alerts = true;
+	/*std::printf("-Alerts Are Enabled-\n");
+	g_handConfiguration->EnableAllAlerts();
+	g_alerts = true;*/
 
 	// Iterating input parameters
 	/*for (int i=1;i<argc;i++)
@@ -183,6 +185,8 @@ void main(int argc, const char* argv[])
 		// Acquiring frames from input device
 		ofstream fin("test.txt");
 		PlayWave playwave;
+		vector<Point>ps;
+		bool oneNote = true;
 		while (g_senseManager->AcquireFrame(true) == PXC_STATUS_NO_ERROR && !g_stop)
 		{
 			// Get current hand outputs
@@ -234,7 +238,6 @@ void main(int argc, const char* argv[])
 						DWORD start = GetTickCount();
 						//cout << start << endl;
 
-
 						for (int j = 0; j < 22; ++j)
 						{
 							if (hand->QueryTrackedJoint((PXCHandData::JointType)j, jointData) == PXC_STATUS_NO_ERROR && Definitions::JointToInt((PXCHandData::JointType)j) != -1)
@@ -243,11 +246,35 @@ void main(int argc, const char* argv[])
 								coor.x = jointData.positionWorld.x;
 								coor.y = jointData.positionWorld.y;
 								coor.z = jointData.positionWorld.z;
+								
 								if (coor.finger == 1 && coor.handside == 1){
 									fin << start << "  " << coor.x <<" " << coor.y <<" " << coor.z << " " << endl;
-								//	cout << coor.x << " " << coor.z << endl;
-									int t = (coor.z - 0.15) / 0.0034;
-									playwave.play(t+200);
+									Point p(coor.x, coor.y, coor.z);
+									ps.push_back(p);
+									//cout << ps.size() << endl;
+									checkPoint cp(p);
+									cp.isClick();
+									int num = cp.isContain();
+
+									if (num && cp.getPress() && oneNote){
+										cout << "play sound" <<endl;
+										playwave.play(num);
+										oneNote = false;
+									}		
+									checkPoint tcp;
+									if (ps.size() > 1){
+										tcp(ps[ps.size() - 2]);
+										tcp.isClick();
+									}
+									
+									if (!cp.getPress() && tcp.getPress()){
+										//cout << ps.size() << endl;
+										ps.clear();
+										oneNote = true;
+									}
+									
+								//	int t = (coor.z - 0.15) / 0.0034;
+								//	playwave.play(t+200);
 								}
 								
 								//cout << coor.finger << " " << coor.handside << endl;
