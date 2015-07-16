@@ -46,17 +46,19 @@ namespace Definitions
 		switch (label)
 		{
 		case PXCHandData::JointType::JOINT_THUMB_TIP:		        {jointLabel = 0;break;}
-		case PXCHandData::JointType::JOINT_INDEX_TIP:	            {jointLabel = 1;break;}
+		
+		case PXCHandData::JointType::JOINT_INDEX_BASE:{jointLabel = 1; break; }
 		case PXCHandData::JointType::JOINT_MIDDLE_TIP:				{jointLabel = 2; break;}       
 		case PXCHandData::JointType::JOINT_RING_TIP:				{jointLabel = 3; break;}  
 		case PXCHandData::JointType::JOINT_PINKY_TIP:				{jointLabel = 4; break;}           
 
 		case PXCHandData::JointType::JOINT_WRIST:			       
 		case PXCHandData::JointType::JOINT_CENTER:			       
-		case PXCHandData::JointType::JOINT_THUMB_BASE:			
+		
+		case PXCHandData::JointType::JOINT_THUMB_BASE:
 		case PXCHandData::JointType::JOINT_THUMB_JT1:			
 		case PXCHandData::JointType::JOINT_THUMB_JT2:			  
-		case PXCHandData::JointType::JOINT_INDEX_BASE:		        
+		case PXCHandData::JointType::JOINT_INDEX_TIP:
 		case PXCHandData::JointType::JOINT_INDEX_JT1:		       
 		case PXCHandData::JointType::JOINT_INDEX_JT2:		      
 		case PXCHandData::JointType::JOINT_MIDDLE_BASE:		       
