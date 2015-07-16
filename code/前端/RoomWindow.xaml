@@ -1,0 +1,198 @@
+<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="WpfApplication1.RoomWindow"
+	x:Name="Window"
+	Title="RoomWindow"
+	Width="1920	" Height="1080">
+	<Window.Resources>
+		<Style x:Key="ButtonCircle" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid Margin="0,0,50.4,9.6">
+							<Ellipse Fill="#FF282A29"/>
+							</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Ellipse Fill="#FF282A29"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Fill="#FF282A29" RadiusY="20" RadiusX="20"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonRoom" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Fill="{x:Null}" Stroke="#FF2C2E2D"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="RoomButton" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Fill="{x:Null}" OpacityMask="{x:Null}" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="5"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="#FFFDEFCD">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="457*"/>
+			<ColumnDefinition Width="500*"/>
+		</Grid.ColumnDefinitions>
+		<Image Margin="144.191,192,153.409,168" Source="Piano.png" Stretch="Fill"/>
+		<Button Content="Menu" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="176.4,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+		<Button Content="Setup" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="379.6,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+		<Button Content="Friend" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="590.8,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+		<Button Content="Elsie(Piano)" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD"  HorizontalAlignment="Left" Height="69" Margin="260.2,913,0,0" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Top" Width="316.8"/>
+		<Label Content="1/5" HorizontalAlignment="Left" Height="46.8" Margin="872.591,976.303,0,0" VerticalAlignment="Top" Width="76.8" Grid.Column="1" FontSize="29.333" FontFamily="Segoe Print"/>
+		<UniformGrid HorizontalAlignment="Left" Height="915.248" Margin="820.4,78.752,0,0" VerticalAlignment="Top" Width="1083.2" Grid.ColumnSpan="2" Rows="3" Columns="2">
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2" Margin="0"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Height="271.8" VerticalAlignment="Top" Width="529.2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="59*"/>
+					<RowDefinition Height="212*"/>
+				</Grid.RowDefinitions>
+				<Button HorizontalAlignment="Left" Height="257.6" Style="{DynamicResource RoomButton}" VerticalAlignment="Top" Width="520" Grid.RowSpan="2"/>
+				<Path Data="M767.2,140.2 L1295.549,140.2" Fill="Black" HorizontalAlignment="Left" Height="50" Stretch="Fill" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="543.4" Margin="-11.935,29.6,-2.265,0" Grid.RowSpan="2"/>
+				<Rectangle Fill="Black" HorizontalAlignment="Left" Height="59.8" RadiusY="40" RadiusX="40" Stroke="#FF2B2D2C" StrokeThickness="30" VerticalAlignment="Top" Width="513.867" Grid.RowSpan="2" Margin="2.668,0,0,0"/>
+				<Ellipse HorizontalAlignment="Left" Height="44.374" Margin="21.333,7.8,0,0" Stroke="#FFFDEFCD" StrokeThickness="5" VerticalAlignment="Top" Width="44.374" RenderTransformOrigin="0.611,-0.6"/>
+				<Label Content="Team Name" HorizontalAlignment="Left" Height="88" Margin="239.4,-8.4,0,0" VerticalAlignment="Top" Width="254.4" Grid.RowSpan="2" FontFamily="Segoe Print" FontSize="37.333" Foreground="#FFFDEFCD"/>
+				<Label Content="drum needed" HorizontalAlignment="Left" Height="89.2" Margin="62.8,41.426,0,0" Grid.Row="1" VerticalAlignment="Top" Width="339.2" FontSize="32" FontFamily="Segoe Print"/>
+				<Label Content="2/3" HorizontalAlignment="Left" Height="62.8" Margin="429.2,135.626,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87.335" FontFamily="Segoe Print" FontSize="24"/>
+			</Grid>
+		</UniformGrid>
+
+	</Grid>
+</Window>
