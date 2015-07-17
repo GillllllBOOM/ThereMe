@@ -1,0 +1,35 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="WpfApplication1.InRoom"
+	x:Name="Window"
+	Title="InRoom"
+	Width="1920" Height="1080" Background="{x:Null}" FontFamily="微软雅黑">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FF282A29"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="#FFFDEFCD">
+        <Button Content="Exit" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="176.4,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+        <Button Content="Setup" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="379.6,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+        <Button Content="Friend" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="75.2" Margin="590.8,71.2,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="169.6"/>
+    </Grid>
+</Window>
