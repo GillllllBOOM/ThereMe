@@ -636,7 +636,6 @@ void PlayWave::play(int i){
 		break;
 	}
 	case 6:{
-
 		mciSendString(TEXT("stop 29D4.wav"), NULL, 0, NULL);
 		mciSendString(TEXT("play 29D4.wav"), NULL, 0, NULL);
 		//Sleep(l);

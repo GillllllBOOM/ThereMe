@@ -245,7 +245,7 @@ void main(int argc, const char* argv[])
 								coor.z = jointData.positionWorld.z;
 								if (coor.finger == 1 && coor.handside == 1){
 									fin << start << "  " << coor.x <<" " << coor.y <<" " << coor.z << " " << endl;
-									cout << coor.x << " " << coor.z << endl;
+									cout << coor.x << " " <<coor.y << endl;
 									//int t = (coor.z - 0.15) / 0.0034;
 									//playwave.play(t+200);
 								}
