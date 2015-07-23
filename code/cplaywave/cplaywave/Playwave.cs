@@ -16,16 +16,16 @@ namespace cplaywave
             uint uReturnLength,
             uint hWndCallback);
 
-        private List<KeyValuePair<int, double> >playhistory;
+        private List<KeyValuePair<int, int> >playhistory = new List<KeyValuePair<int, int> >();
 
-        public void savehistory(int i, double t)
+        public void savehistory(int i, int t)
         {
-            KeyValuePair<int, double> temp = new KeyValuePair<int, double>(i, t);
+            KeyValuePair<int, int> temp = new KeyValuePair<int, int>(i, t);
             playhistory.Add(temp);
             return;
         }
 
-        public List<KeyValuePair<int, double>> gethistory()
+        public List<KeyValuePair<int, int>> gethistory()
         {
             return playhistory;
         }
