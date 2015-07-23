@@ -249,6 +249,7 @@ void main(int argc, const char* argv[])
 								coor.y = jointData.positionWorld.y;
 								coor.z = jointData.positionWorld.z;
 								
+								//right hand
 								if (coor.finger == 1 && coor.handside == 1){
 									fin << start << "  " << coor.x <<" " << coor.y <<" " << coor.z << " " << endl;
 									Point p(coor.x, coor.y, coor.z);
@@ -260,7 +261,7 @@ void main(int argc, const char* argv[])
 									int num = cp.isContain();
 									
 									if (num && cp.getPress() && rightoneNote){
-										cout << "play sound" <<endl;
+										cout << "right play sound" <<endl;
 										playwave.play(num);
 										rightoneNote = false;
 									}	
@@ -271,17 +272,14 @@ void main(int argc, const char* argv[])
 										tcp(rightps[rightps.size() - 2]);
 										tcp.isClick();
 										if (!cp.getPress() && tcp.getPress()){
-											cout << rightps.size() << endl;
+											cout << "right" << rightps.size() << endl;
 											rightps.clear();
 											rightoneNote = true;
 										}
 									}	
-									
-									
-								//	int t = (coor.z - 0.15) / 0.0034;
-								//	playwave.play(t+200);
 								}
 
+								//left hand
 								if (coor.finger == 1 && coor.handside == 0){
 									fin << start << "  " << coor.x << " " << coor.y << " " << coor.z << " " << endl;
 									Point p(coor.x, coor.y, coor.z);
@@ -292,7 +290,7 @@ void main(int argc, const char* argv[])
 									int num = cp.isContain();
 									
 									if (num && cp.getPress() && leftoneNote){
-										//cout << "play sound" << endl;
+										cout << "left play sound" << endl;
 										playwave.play(num);
 										leftoneNote = false;
 									}
@@ -302,15 +300,11 @@ void main(int argc, const char* argv[])
 										tcp(leftps[leftps.size() - 2]);
 										tcp.isClick();
 										if (!cp.getPress() && tcp.getPress()){
-											//cout << leftps.size() << endl;
+											cout << "left" << leftps.size() << endl;
 											leftps.clear();
 											leftoneNote = true;
 										}
 									}
-									
-
-									//	int t = (coor.z - 0.15) / 0.0034;
-									//	playwave.play(t+200);
 								}
 								
 								//cout << coor.finger << " " << coor.handside << endl;
