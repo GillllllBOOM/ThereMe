@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cplaywave
 {
-    class Gettime
+    class GetTime
     {
         public  double ExecTimeDiff(DateTime dateBegin, DateTime dateEnd)
         {

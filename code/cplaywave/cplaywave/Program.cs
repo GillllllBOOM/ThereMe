@@ -11,20 +11,22 @@ namespace cplaywave
     {
         static void Main(string[] args)
         {
+            ThreadPlay tp = new ThreadPlay();
             Playwave temp = new Playwave();
-            Gettime tim = new Gettime();
+            GetTime tim = new GetTime();
 
-            temp.play(5); 
-            DateTime DateTime1 = DateTime.Now;
-            Thread.Sleep(300);
-           
-            temp.play(6);
-            DateTime DateTime2 = DateTime.Now;
-            double diff = tim.ExecTimeDiff(DateTime1, DateTime2);
-            temp.savehistory(5, (int)diff);
-            Console.Write(diff);
-            temp.savehistory(6, 1000);
-            Thread.Sleep(1000);
+            Console.WriteLine(tp.play("test.txt"));
+            //temp.play(5);
+            //DateTime DateTime1 = DateTime.Now;
+            //Thread.Sleep(300);
+
+            //temp.play(6);
+            //DateTime DateTime2 = DateTime.Now;
+            //double diff = tim.ExecTimeDiff(DateTime1, DateTime2);
+            //temp.savehistory(5, (int)diff);
+            //Console.Write(diff);
+            //temp.savehistory(6, 1000);
+            //Thread.Sleep(1000);
 
             
             //temp.play(6); 
@@ -46,22 +48,23 @@ namespace cplaywave
             //Thread.Sleep(800);
             //temp.savehistory(4, 300);
 
-            
-            //temp.play(102);
-            //Thread.Sleep(300);
-            //temp.play(102);
-            //Thread.Sleep(300);
-            //temp.play(101);
-            //Thread.Sleep(300);
-            //temp.play(102);
-            //Thread.Sleep(300);
-            //temp.play(101);
-            //Thread.Sleep(300);
-            //temp.play(103);
-            //Thread.Sleep(300);
-            //temp.play(102);
-            //Thread.Sleep(300);
-            //temp.play(100);
+
+            temp.play(102);
+            Thread.Sleep(300);
+            temp.play(102);
+            Thread.Sleep(300);
+            temp.play(101);
+            Thread.Sleep(300);
+            temp.play(102);
+            Thread.Sleep(300);
+            temp.play(101);
+            Thread.Sleep(300);
+            temp.play(103);
+            Thread.Sleep(300);
+            temp.play(102);
+            Thread.Sleep(300);
+            temp.play(100);
+            Thread.Sleep(300);
 
             List<KeyValuePair<int, int>> history = temp.gethistory();
             for (int i = 0; i < history.Count; i++)

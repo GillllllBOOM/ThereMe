@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gettime.cs" />
+    <Compile Include="ThreadPlay.cs" />
+    <Compile Include="GetTime.cs" />
     <Compile Include="Playwave.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
