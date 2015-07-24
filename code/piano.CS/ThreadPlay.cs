@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace cplaywave
+namespace hands_viewer.cs
 {
     class ThreadPlay
     {
@@ -19,19 +19,19 @@ namespace cplaywave
                 List<int> wave = new List<int>();
                 while ((line = sr.ReadLine()) != null)
                 {
-                    //Console.WriteLine(line);
-                    //string[] arr = line.Split(' ');
                     wave.Add(int.Parse(line));
                 }
-                //if (wave.Count%2 != 0)
-                //    return -2;
+                if (wave.Count % 2 != 0)
+                    return -2;
                 Thread t = new Thread(new ParameterizedThreadStart(cplay));
                 t.Start(wave);
+
             }
-            catch{
+            catch
+            {
                 Console.WriteLine("音频不存在");
                 return -1;
-            }    
+            }
             return 0;
         }
 
@@ -42,9 +42,8 @@ namespace cplaywave
             for (int i = 0; i < temp.Count; i += 2)
             {
                 p.play(temp[i]);
-                Thread.Sleep(temp[i+1]);
+                Thread.Sleep(temp[i + 1]);
             }
         }
-    } 
-   
+    }
 }
