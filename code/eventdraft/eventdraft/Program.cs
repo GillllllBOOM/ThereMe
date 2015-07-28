@@ -23,6 +23,12 @@ namespace eventdraft
             ClickReceiver eventReceiver2 = new ClickReceiver(monitor2);
             // 运行
             monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
+            monitor2.SimulateClick("1.wav");
         }
     }
 }
