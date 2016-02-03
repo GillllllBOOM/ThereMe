@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApplication1.UI.Multiplayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" mc:Ignorable="d"
+        Title="Multiplayer" Height="1080" Width="1920" Background="#FFFDEFC6" WindowStartupLocation="CenterScreen" WindowState="Maximized" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FF282A29"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Viewbox x:Name="LayoutRoot" Stretch="Fill">
+            <Viewbox Height="1080" Stretch="Fill" Width="1920" >
+                <Canvas Background="#FFFEEFCD" Height="1080" Width="1920">
+                    <Button Content="Exit" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="101.385" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="177.884" Click="JumpToMain" Margin="1666,10,0,0"/>
+                    <Label Content="Name" Height="73" Canvas.Left="1249" Canvas.Top="562" Width="122" FontSize="36"/>
+                    <TextBox x:Name="textName" Height="73" Canvas.Left="1376" TextWrapping="Wrap" Text="There is me!" Canvas.Top="562" Width="373" FontSize="36" MaxLines="1" MaxLength="100"/>
+                    <Label Content="IP" Height="73" Canvas.Left="1249" Canvas.Top="689" Width="122" FontSize="36"/>
+                    <TextBox x:Name="textIP" Height="73" Canvas.Left="1371" TextWrapping="Wrap" Canvas.Top="689" Width="373" FontSize="36" MaxLines="1" MaxLength="100"/>
+                    <Button x:Name="buttonConnect" Content="Connect" Canvas.Left="1436" Canvas.Top="809" Width="223" Height="81" Background="#FF282A29" Foreground="#FFFEEFCD" FontSize="36" Click="Connect_Click"/>
+                    <Label x:Name="ConnectName" Content="No User" Canvas.Left="1489" Canvas.Top="462" FontSize="36"/>
+                    <Button x:Name="buttonStart" Content="START" Canvas.Left="529" Canvas.Top="951" Width="223" Height="56" FontSize="24" Click="buttonStart_Click" Background="#FF282A29" Foreground="#FFFEEFCD" IsEnabled="False"/>
+                    <Image x:Name="key_pressed" Source="/Image/pressed_key.png" Stretch="Fill" Height="771.314" Canvas.Left="170.433" Canvas.Top="90.262" Width="379.935">
+                        <i:Interaction.Behaviors>
+                            <ei:DataStateBehavior/>
+                        </i:Interaction.Behaviors>
+                    </Image>
+                    <Image x:Name="image" Source="/Image/key.png" Stretch="Fill" Height="771" Canvas.Left="170.433" Canvas.Top="90.262" Width="900"/>
+                    <Ellipse x:Name="Pointer1" Height="32.852" Canvas.Left="215.13" Canvas.Top="189.004" Width="32.107" RenderTransformOrigin="0.692,1" Fill="#FF39E288"/>
+                    <Ellipse x:Name="Pointer2" Fill="#FF206194" Height="32" Canvas.Left="338" Canvas.Top="189" Width="32" RenderTransformOrigin="0.692,1"/>
+                    <Button Content="Send Song" Canvas.Left="1467" Canvas.Top="352" Width="192" Height="63" FontSize="24" Click="Button_Click" Opacity="0" IsEnabled="False"/>
+                </Canvas>
+            </Viewbox>
+        </Viewbox>
+    </Grid>
+</Window>

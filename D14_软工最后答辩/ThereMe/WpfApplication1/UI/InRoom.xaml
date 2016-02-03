@@ -1,0 +1,113 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="WpfApplication1.InRoom"
+	x:Name="Window"
+	Title="InRoom"
+	Width="1920" Height="1080" Background="{x:Null}" FontFamily="微软雅黑" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+	<Window.Resources>
+		<Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Ellipse Fill="#FF282A29"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Ellipse Fill="#FF43413D" Stroke="Black"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Fill="#FF282A29" RadiusY="20" RadiusX="20"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Image RenderTransformOrigin="0.48,0.661" Source="/Image/arrow.png" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+	</Window.Resources>
+
+	<Viewbox x:Name="LayoutRoot" Stretch="Fill">
+		<Viewbox Height="1080" Stretch="Fill" Width="1920" >
+			<Grid Background="#FFFEEFCD" Height="1080" Width="1920">
+				<Image Margin="205,69,719,174" Source="/WpfApplication1;component/Image/drum.PNG" Stretch="Fill"/>
+
+                <Image x:Name="drum1" Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/drum1.PNG" Stretch="Fill" Visibility="Hidden"/>
+                <Image Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/drum2.PNG" Stretch="Fill" Visibility="Hidden"/>
+                <Image Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/drum3.PNG" Stretch="Fill" Visibility="Hidden"/>
+                <Image Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/drum4.PNG" Stretch="Fill" Visibility="Hidden"/>
+                <Image Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/cymbal1.PNG" Stretch="Fill" Visibility="Hidden"/>
+                <Image Margin="187.8,161.8,736.2,179.965" Source="/WpfApplication1;component/Image/cymbal2.PNG" Stretch="Fill" Visibility="Hidden"/>
+			 
+                <Button Content="" HorizontalAlignment="Left" Height="184" Margin="1491.716,722.4,0,0" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Top" Width="198.4"/>
+                <Button x:Name="PlayButton" Content="Button" Style="{DynamicResource ButtonStyle4}" Click="Test" Height="245.824" Canvas.Left="1447.752" Canvas.Top="576.285" Width="200.933" Margin="1492,688,227,146"/>
+
+                <Button Content="Exit" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="101.385" Margin="1666.126,10,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="177.884" Click="JumpToMain"/>
+				<Button Content="Setup" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD" Background="#FFFDEFCD" HorizontalAlignment="Left" Height="101.385" Margin="1419.716,10,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="177.884"/>
+                
+     			<Button Content="Elsie(Drum)" FontFamily="Segoe Print" FontSize="36" Foreground="#FFFDEFCD"  HorizontalAlignment="Left" Height="69" Margin="477.8,923.99,0,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="316.8" Click="JumpToPiano"/>
+                <Ellipse x:Name="Pointer1" RenderTransformOrigin="0.692,1" Fill="#FF39E288" Margin="547,198,1341,850"/>
+                <Ellipse x:Name="Pointer2" Fill="#FF206194" RenderTransformOrigin="0.692,1" Margin="763,198,1125,850"/>
+
+            </Grid>
+		</Viewbox>
+	</Viewbox>
+</Window>
